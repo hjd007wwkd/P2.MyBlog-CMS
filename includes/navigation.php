@@ -1,4 +1,3 @@
-<?php include "includes/db.php";?>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -22,10 +21,10 @@
             echo "<li><a href='#'>{$cat_title}</a></li>";
           }
         ?>
-        <!-- <li>
-          <a href="#">About</a>
-        </li>
         <li>
+          <a href="admin">Admin</a>
+        </li>
+        <!-- <li>
           <a href="#">Services</a>
         </li>
         <li>
