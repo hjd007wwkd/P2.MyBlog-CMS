@@ -15,13 +15,9 @@
         </h1>
 
         <?php
-          //if you search something on the sidebar
-          //it search post based on the tags in database
-          if(isset($_POST['submit'])) {
-            $search = $_POST['search'];
-            $query = "SELECT * FROM posts WHERE tags LIKE '%$search%'";
-          } else {
-            $query = "SELECT * FROM posts";
+          if(isset($_GET['category'])) {
+            $post_category_id = $_GET['category'];
+            $query = "SELECT * FROM posts WHERE category_id=$post_category_id";
           }
           
           $select_query = mysqli_query($connection, $query);
