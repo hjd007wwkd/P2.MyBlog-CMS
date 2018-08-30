@@ -19,9 +19,9 @@
           //it search post based on the tags in database
           if(isset($_POST['submit'])) {
             $search = $_POST['search'];
-            $query = "SELECT * FROM posts WHERE tags LIKE '%$search%'";
+            $query = "SELECT * FROM posts WHERE tags LIKE '%$search%' AND status='publish'";
           } else {
-            $query = "SELECT * FROM posts";
+            $query = "SELECT * FROM posts WHERE status='publish'";
           }
           
           $select_query = mysqli_query($connection, $query);

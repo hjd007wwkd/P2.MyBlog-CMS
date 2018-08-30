@@ -36,8 +36,8 @@
       echo "<tr>
               <td>$cat_id</td>
               <td>$cat_title</td>
-              <td><a href='categories.php?delete=$cat_id'>Delete</a></td>
               <td><a href='categories.php?edit=$cat_id'>Edit</a></td>
+              <td><a href='categories.php?delete=$cat_id'>Delete</a></td>
             </tr>";
     }
   }

@@ -22,7 +22,7 @@
 
     //current date with formant 'd-m-y'
     $post_date= date('d-m-y');
-    $post_comment_count = 4;
+    $post_comment_count = 0;
 
     //if you get permission deny, you need to go to the folder and give permission to everyone in the setting of the folder
     move_uploaded_file($post_image_temp, "../images/$post_image");
