@@ -4,6 +4,18 @@ header()가 한번 보내진상태에서 또 보내면 에러가뜬다
 근데 이거는 header 빼고는 나머지는 buffer에 저장을 해놓고
 나중에 보내기때문에 괜찮다 -->
 <?php ob_start(); ?>
+<?php session_start(); ?>
+
+<?php 
+  if(isset($_SESSION['role'])){
+    if($_SESSION['role'] == 'subscriber'){
+      header("Location: ../index.php");
+    }
+  } else {
+    header("Location: ../index.php");
+  }
+?>
+
 <?php include "../includes/db.php";?>
 <?php include 'functions.php'; ?>
 <!DOCTYPE html>
@@ -38,3 +50,20 @@ header()가 한번 보내진상태에서 또 보내면 에러가뜬다
 </head>
 
 <body>
+  <div id="wrapper">
+
+    <!-- Navigation -->
+    <?php include 'navigation.php'; ?>
+
+    <div id="page-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+          <div class="col-lg-12">
+            
+            <h1 class="page-header">
+              Welcome to admin
+              <small><?php echo $_SESSION['username'] ?></small>
+            </h1>
